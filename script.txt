@@ -1,0 +1,27 @@
+import bpy
+import random
+
+
+for i in range(20):
+        bpy.ops.curve.tree_add(do_update=True,
+                               chooseSet='0',
+                               bevel=True,
+                               prune=False,
+                               showLeaves=True,
+                               useArm=False,
+                               scale=5,
+                               seed=i)
+
+for i in range(20):
+                               
+        fa_nev = 'tree'+str(i)
+        tree = bpy.data.objects[fa_nev]
+        
+        rndX = random.randint(-24, 24)
+        rndY = random.randint(-24, 24)
+        while rndX > -10 and rndX < 10 and rndY > -10 and rndY < 10:
+            rndX = random.randint(-24, 24)
+            rndY = random.randint(-24, 24) 
+            
+        tree.location.x = rndX 
+        tree.location.y = rndY
